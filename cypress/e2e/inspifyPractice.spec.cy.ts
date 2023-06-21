@@ -17,8 +17,9 @@ describe('Login Functionality', () => {
     })
 
     it('Launch URL', () => {
-        cy.visit(testData.URL);
-       login.loginToSite(testData.Username,testData.Password);
+        cy.visit(Cypress.env('url'));
+        login.loginToSite(testData.Username, testData.Password);
+        cy.wait(5000)
     })
     it('Custom Command', () => {
         cy.login(testData.URL, testData.Username, testData.Password);
@@ -27,7 +28,6 @@ describe('Login Functionality', () => {
 
 describe('CreateStorybook', () => {
     beforeEach(() => {
-        // Load the fixture before each test
         cy.fixture('testData').then(function (data) {
             testData = data;
         })
@@ -35,18 +35,12 @@ describe('CreateStorybook', () => {
 
     it('CreateStorybook', () => {
         cy.login(testData.URL, testData.Username, testData.Password);
-        cy.wait(4000);
         home.clickOnStorybookmenuButton();
-        cy.wait(4000);
         home.clickOnCreateStorybookButton();
-        cy.wait(4000);
         home.enterSBTitleandClickOnSaveButton();
-        cy.wait(4000);
         home.UploadAFile();
-        cy.wait(7500);
         home.SelectUploadedFile();
         home.ClickOnActivateButton();
-        cy.wait(4000);
         home.ClickOnActivateButton2();
     })
 })
