@@ -10,7 +10,8 @@ const inspifyLocators = {
     FileUpload: ".drop-zone-input",
     ActivateButton: '[class*="btn-publish"]',
     ActivateButton2:".popup-content-container .btn-publish",
-    UploadButton: ".save-btn"
+    UploadButton: ".save-btn",
+    SelectScene : ".SBPageThumbnail .light-border"
 }
 export default inspifyLocators;
 
