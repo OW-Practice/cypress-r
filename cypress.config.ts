@@ -6,15 +6,15 @@ module.exports = defineConfig({
     "configFile": "reporter-config.json"
   },
   env: {
-    url: 'https://nikhilp-prod3.inspify.com/',
-    "grepFilterSpecs": true,
-    "grepFilterTests": true,
-    "grepOmitFiltered": true
+    url: 'https://nikhilp-prod1.inspify.com/',
+    grepFilterSpecs: true,
+    grepFilterTests: true,
+    grepOmitFiltered: true
   },
   e2e: {
     testIsolation: false,
     defaultCommandTimeout: 35000,
-    baseUrl : 'https://nikhilp-prod1.inspify.com',
+    baseUrl: 'https://nikhilp-prod1.inspify.com',
 
     //pageLoadTimeout : 120000,
     retries: {
@@ -23,7 +23,7 @@ module.exports = defineConfig({
     },
     setupNodeEvents(on, config) {
       // implement node event listeners here
-      //require('@cypress/grep/src/plugin')(config);
+      require('@cypress/grep/src/plugin')(config);
       return config;
     },
   },
