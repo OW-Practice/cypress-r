@@ -1,0 +1,164 @@
+{
+  "stats": {
+    "suites": 2,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2023-06-21T09:55:01.590Z",
+    "end": "2023-06-21T09:55:44.114Z",
+    "duration": 42524,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "86903a2e-80cc-4d03-a3b0-e30e8063c09e",
+      "title": "",
+      "fullFile": "cypress\\e2e\\inspifyPractice.spec.cy.ts",
+      "file": "cypress\\e2e\\inspifyPractice.spec.cy.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "9f661ef7-8e68-4591-95e2-c36a7fe192a0",
+          "title": "Login Functionality",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Launch URL",
+              "fullTitle": "Login Functionality Launch URL",
+              "timedOut": null,
+              "duration": 5124,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(testData.URL);\nlogin.loginToSite(testData.Username, testData.Password);",
+              "err": {},
+              "uuid": "7bf24a98-d4e2-47d5-b878-e0e6173b5891",
+              "parentUUID": "9f661ef7-8e68-4591-95e2-c36a7fe192a0",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Custom Command",
+              "fullTitle": "Login Functionality Custom Command",
+              "timedOut": null,
+              "duration": 2073,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.login(testData.URL, testData.Username, testData.Password);",
+              "err": {},
+              "uuid": "47943e2f-4ffa-470e-be27-0c5f89d054bf",
+              "parentUUID": "9f661ef7-8e68-4591-95e2-c36a7fe192a0",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "7bf24a98-d4e2-47d5-b878-e0e6173b5891",
+            "47943e2f-4ffa-470e-be27-0c5f89d054bf"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 7197,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "50e2887d-1b0d-4661-b8d5-ff676ad48f77",
+          "title": "CreateStorybook",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "CreateStorybook",
+              "fullTitle": "CreateStorybook CreateStorybook",
+              "timedOut": null,
+              "duration": 32491,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.login(testData.URL, testData.Username, testData.Password);\n// cy.wait(4000);\nhome.clickOnStorybookmenuButton();\n// cy.wait(4000);\nhome.clickOnCreateStorybookButton();\n// cy.wait(4000);\nhome.enterSBTitleandClickOnSaveButton();\n// cy.wait(4000);\nhome.UploadAFile();\n// cy.wait(7500);\nhome.SelectUploadedFile();\nhome.ClickOnActivateButton();\n// cy.wait(4000);\nhome.ClickOnActivateButton2();",
+              "err": {},
+              "uuid": "60062d9c-31fe-4d69-96d5-1c8f67823932",
+              "parentUUID": "50e2887d-1b0d-4661-b8d5-ff676ad48f77",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "60062d9c-31fe-4d69-96d5-1c8f67823932"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 32491,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results/json",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

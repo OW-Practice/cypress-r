@@ -1,0 +1,168 @@
+{
+  "stats": {
+    "suites": 2,
+    "tests": 3,
+    "passes": 2,
+    "pending": 0,
+    "failures": 1,
+    "start": "2023-06-21T11:07:50.202Z",
+    "end": "2023-06-21T11:08:28.155Z",
+    "duration": 37953,
+    "testsRegistered": 3,
+    "passPercent": 66.66666666666666,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "63e5ba9a-3834-4378-841e-197cf75ce751",
+      "title": "",
+      "fullFile": "cypress\\e2e\\inspifyPractice.spec.cy.ts",
+      "file": "cypress\\e2e\\inspifyPractice.spec.cy.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "e46d69ff-9572-4fd6-bf76-2a854dd6826c",
+          "title": "Login Functionality",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Launch URL",
+              "fullTitle": "Login Functionality Launch URL",
+              "timedOut": null,
+              "duration": 9983,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(testData.URL);\nlogin.loginToSite(testData.Username, testData.Password);",
+              "err": {},
+              "uuid": "f06a168d-9216-48b4-bd08-9942d784ae8a",
+              "parentUUID": "e46d69ff-9572-4fd6-bf76-2a854dd6826c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Custom Command",
+              "fullTitle": "Login Functionality Custom Command",
+              "timedOut": null,
+              "duration": 4984,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.login(testData.URL, testData.Username, testData.Password);",
+              "err": {},
+              "uuid": "6f7590cd-90e1-4462-9e59-9a85872425cc",
+              "parentUUID": "e46d69ff-9572-4fd6-bf76-2a854dd6826c",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "f06a168d-9216-48b4-bd08-9942d784ae8a",
+            "6f7590cd-90e1-4462-9e59-9a85872425cc"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 14967,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "b2a11b24-03d2-4aa0-a793-b07760dae42d",
+          "title": "CreateStorybook",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "CreateStorybook",
+              "fullTitle": "CreateStorybook CreateStorybook",
+              "timedOut": null,
+              "duration": 19146,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.login(testData.URL, testData.Username, testData.Password);\nhome.clickOnStorybookmenuButton();\nhome.clickOnCreateStorybookButton();\nhome.enterSBTitleandClickOnSaveButton();\nhome.UploadAFile();\nhome.SelectUploadedFile();\nhome.ClickOnActivateButton();\nhome.ClickOnActivateButton2();",
+              "err": {
+                "message": "CypressError: Timed out retrying after 5000ms: `cy.wait()` timed out waiting `5000ms` for the 1st request to the route: `image`. No request ever occurred.\n\nhttps://on.cypress.io/wait",
+                "estack": "CypressError: Timed out retrying after 5000ms: `cy.wait()` timed out waiting `5000ms` for the 1st request to the route: `image`. No request ever occurred.\n\nhttps://on.cypress.io/wait\n    at cypressErr (https://nikhilp-prod1.inspify.com/__cypress/runner/cypress_runner.js:164260:18)\n    at Object.errByPath (https://nikhilp-prod1.inspify.com/__cypress/runner/cypress_runner.js:164315:10)\n    at checkForXhr (https://nikhilp-prod1.inspify.com/__cypress/runner/cypress_runner.js:151208:92)\n    at <unknown> (https://nikhilp-prod1.inspify.com/__cypress/runner/cypress_runner.js:151231:28)\n    at tryCatcher (https://nikhilp-prod1.inspify.com/__cypress/runner/cypress_runner.js:18744:23)\n    at Promise.attempt.Promise.try (https://nikhilp-prod1.inspify.com/__cypress/runner/cypress_runner.js:16018:29)\n    at whenStable (https://nikhilp-prod1.inspify.com/__cypress/runner/cypress_runner.js:156173:65)\n    at <unknown> (https://nikhilp-prod1.inspify.com/__cypress/runner/cypress_runner.js:155614:14)\n    at tryCatcher (https://nikhilp-prod1.inspify.com/__cypress/runner/cypress_runner.js:18744:23)\n    at Promise._settlePromiseFromHandler (https://nikhilp-prod1.inspify.com/__cypress/runner/cypress_runner.js:16679:31)\n    at Promise._settlePromise (https://nikhilp-prod1.inspify.com/__cypress/runner/cypress_runner.js:16736:18)\n    at Promise._settlePromise0 (https://nikhilp-prod1.inspify.com/__cypress/runner/cypress_runner.js:16781:10)\n    at Promise._settlePromises (https://nikhilp-prod1.inspify.com/__cypress/runner/cypress_runner.js:16861:18)\n    at Promise._fulfill (https://nikhilp-prod1.inspify.com/__cypress/runner/cypress_runner.js:16805:18)\n    at <unknown> (https://nikhilp-prod1.inspify.com/__cypress/runner/cypress_runner.js:18419:46)\nFrom Your Spec Code:\n    at ./cypress/pages/HomePage.ts.HomePage.UploadAFile (webpack:///./cypress/pages/HomePage.ts:22:0)\n    at Context.eval (webpack:///./cypress/e2e/inspifyPractice.spec.cy.ts:36:0)",
+                "diff": null
+              },
+              "uuid": "6db0bac7-8405-4880-b748-7953c529489c",
+              "parentUUID": "b2a11b24-03d2-4aa0-a793-b07760dae42d",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "6db0bac7-8405-4880-b748-7953c529489c"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 19146,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results/json",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

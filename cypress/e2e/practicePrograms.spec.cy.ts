@@ -5,6 +5,11 @@ function swapNumbersUsingThirdVariable() {
     let temp = a;
     a = b
     b = temp
+function swapNumbersUsingThirdVariable(){
+    let a=15, b=7;
+    let temp=a;
+    a=b
+    b=temp
     console.log(a)
     console.log(b)
 }
@@ -24,14 +29,11 @@ swapNumbersWithoutUsingThirdVariable()
 
 function toPrintRAlla() {
     let name = "Ramya Alla"
-    //    let splitName = name.split(" ")
-    //    let secondname = splitName[1]
-    //    let firstletter = name.charAt(0);
-    // let finaloutput = firstletter.concat(secondname)
-    // let finaloutput = firstletter+secondname
-    let finaloutput = name.charAt(0) + name.split(" ")[1]
-
-    console.log(finaloutput)
+   let splitName = name.split(" ")
+   let secondname = splitName[1]
+   let firstletter = name.charAt(0);
+   let finaloutput = concat(firstletter,secondname)
+   console.log(finaloutput)
 }
 
 toPrintRAlla()

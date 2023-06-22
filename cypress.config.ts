@@ -5,6 +5,9 @@ module.exports = defineConfig({
   "reporterOptions": {
     "configFile": "reporter-config.json"
   },
+  "reporterOptions": {
+    "configFile": "reporter-config.json"
+  },
   env: {
     url: 'https://nikhilp-prod3.inspify.com/',
     "grepFilterSpecs": true,
