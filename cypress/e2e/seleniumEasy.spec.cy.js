@@ -13,15 +13,14 @@ describe('SeleniumEasy', () => {
     before(() => {
         // ensure clean test slate for these tests
         cy.then(Cypress.session.clearCurrentSessionData)
-
     })
     // @ts-ignore
 
-    it("test1", {tags: "@r1"}, () => {
+    it("test1", { tags: "@r1" }, () => {
         console.log("im logged")
     })
 
-    it("test2", {tags: "@r2"}, () => {
+    it("test2", { tags: "@r2" }, () => {
         console.log("im logged 2")
     })
 
@@ -39,20 +38,6 @@ describe('SeleniumEasy', () => {
 
     // @ts-ignore
     it('Check box and Radio boxes operations - 1', { tags: "@h2" }, () => {
-        cy.visit('https://demo.seleniumeasy.com/basic-radiobutton-demo.html')
-        cy.get('[value="Male"]').first().type('{enter}').check().should('be.checked')
-        cy.get('#buttoncheck').contains('Get Checked value').click()
-        cy.get('.radiobutton').first().should('contain.text', 'Male')
-    })
-
-    it('Check box and Radio boxes operations - 2', () => {
-        cy.visit('https://demo.seleniumeasy.com/basic-radiobutton-demo.html')
-        cy.get('[value="Male"]').first().type('{enter}').check().should('be.checked')
-        cy.get('#buttoncheck').contains('Get Checked value').click()
-        cy.get('.radiobutton').first().should('contain.text', 'Male')
-    })
-
-    it('Check box and Radio boxes operations - 3', () => {
         cy.visit('https://demo.seleniumeasy.com/basic-radiobutton-demo.html')
         cy.get('[value="Male"]').first().type('{enter}').check().should('be.checked')
         cy.get('#buttoncheck').contains('Get Checked value').click()

@@ -1,19 +1,17 @@
-import { concat } from "cypress/types/lodash";
-
-
 function swapNumbersUsingThirdVariable() {
     let a = 15, b = 7;
     let temp = a;
     a = b
     b = temp
-function swapNumbersUsingThirdVariable(){
-    let a=15, b=7;
-    let temp=a;
-    a=b
-    b=temp
-    console.log(a)
-    console.log(b)
-}}
+    function swapNumbersUsingThirdVariable() {
+        let a = 15, b = 7;
+        let temp = a;
+        a = b
+        b = temp
+        console.log(a)
+        console.log(b)
+    }
+}
 
 swapNumbersUsingThirdVariable()
 
@@ -30,11 +28,11 @@ swapNumbersWithoutUsingThirdVariable()
 
 function toPrintRAlla() {
     let name = "Ramya Alla"
-   let splitName = name.split(" ")
-   let secondname = splitName[1]
-   let firstletter = name.charAt(0);
-   let finaloutput = firstletter.concat(secondname)
-   console.log(finaloutput)
+    let splitName = name.split(" ")
+    let secondname = splitName[1]
+    let firstletter = name.charAt(0);
+    let finaloutput = firstletter.concat(secondname)
+    console.log(finaloutput)
 }
 
 toPrintRAlla()

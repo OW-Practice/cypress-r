@@ -151,14 +151,14 @@ printMyFirstName("Ramya", function (firstName, done) {
 });
 
 function printMyFirstNamep1(firstName) {
-    return new Promise(function(resolve, reject) {
+    return new Promise(function (resolve, reject) {
         // Perform some operations with firstName
         resolve(firstName);
     });
 }
 
 function printMySecondNamep2(firstName) {
-    return new Promise(function(resolve, reject) {
+    return new Promise(function (resolve, reject) {
         let secondName = firstName + "Reddy";
         // Perform some operations with secondName
         resolve(secondName);
@@ -166,7 +166,7 @@ function printMySecondNamep2(firstName) {
 }
 
 function printMyThirdNamep3(secondName) {
-    return new Promise(function(resolve, reject) {
+    return new Promise(function (resolve, reject) {
         let thirdName = secondName + "Alla";
         // Perform some operations with thirdName
         resolve(thirdName);
@@ -175,47 +175,47 @@ function printMyThirdNamep3(secondName) {
 
 // Example usage:
 printMyFirstNamep1("Ramya-Promise")
-    .then(function(firstName) {
+    .then(function (firstName) {
         return printMySecondNamep2(firstName);
     })
-    .then(function(secondName) {
+    .then(function (secondName) {
         return printMyThirdNamep3(secondName);
     })
-    .then(function(thirdName) {
+    .then(function (thirdName) {
         console.log(thirdName); // Print the thirdName
     })
-    // .catch(function(error) {
-    //     console.error(error); // Handle any errors that occurred in the chain
-    // });
+// .catch(function(error) {
+//     console.error(error); // Handle any errors that occurred in the chain
+// });
 
-    async function printMyFirstNamea1(firstName) {
-        // Perform some operations with firstName
-        return firstName;
+async function printMyFirstNamea1(firstName) {
+    // Perform some operations with firstName
+    return firstName;
+}
+
+async function printMySecondNamea2(firstName) {
+    let secondName = firstName + "Reddy";
+    // Perform some operations with secondName
+    return secondName;
+}
+
+async function printMyThirdNamea3(secondName) {
+    let thirdName = secondName + "Alla";
+    // Perform some operations with thirdName
+    return thirdName;
+}
+
+// Example usage:
+async function printNames() {
+    try {
+        const firstName = await printMyFirstNamea1("Ramya - Async");
+        const secondName = await printMySecondNamea2(firstName);
+        const thirdName = await printMyThirdNamea3(secondName);
+        console.log(thirdName); // Print the thirdName
+    } catch (error) {
+        console.error(error); // Handle any errors that occurred
     }
-    
-    async function printMySecondNamea2(firstName) {
-        let secondName = firstName + "Reddy";
-        // Perform some operations with secondName
-        return secondName;
-    }
-    
-    async function printMyThirdNamea3(secondName) {
-        let thirdName = secondName + "Alla";
-        // Perform some operations with thirdName
-        return thirdName;
-    }
-    
-    // Example usage:
-    async function printNames() {
-        try {
-            const firstName = await printMyFirstNamea1("Ramya - Async");
-            const secondName = await printMySecondNamea2(firstName);
-            const thirdName = await printMyThirdNamea3(secondName);
-            console.log(thirdName); // Print the thirdName
-        } catch (error) {
-            console.error(error); // Handle any errors that occurred
-        }
-    }
-    
-    printNames();
-    
+}
+
+printNames();
+
