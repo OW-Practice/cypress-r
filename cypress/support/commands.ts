@@ -24,9 +24,9 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 import locators from '../locators/inspifyLocators'
-// @ts-ignore
-import registerCypressGrep from '@cypress/grep'
-registerCypressGrep()
+// // @ts-ignore
+// import registerCypressGrep from '@cypress/grep'
+// registerCypressGrep()
 
 //const registerCypressGrep = require('@cypress/grep');
 //registerCypressGrep()

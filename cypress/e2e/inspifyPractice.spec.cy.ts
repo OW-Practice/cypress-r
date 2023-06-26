@@ -1,10 +1,10 @@
 /// <reference types="cypress"/>
-import loginpage from '../pages/LoginPage'
-import homepage from '../pages/HomePage'
+import loginPage from '../pages/LoginPage'
+import inspifyPage from '../pages/InspifyPage'
 //import testData from '../fixtures/testData.json'
 
-const login = new loginpage();
-const home = new homepage();
+const lpage = new loginPage();
+const ipage = new inspifyPage();
 let testData;
 
 
@@ -18,11 +18,8 @@ describe('Login Functionality', () => {
 
     it('Launch URL', () => {
         cy.visit(Cypress.env('url'));
-        login.loginToSite(testData.Username, testData.Password);
+        lpage.loginToSite(testData.Username, testData.Password);
         cy.wait(5000)
-    })
-    it('Custom Command', () => {
-        cy.login(testData.URL, testData.Username, testData.Password);
     })
 })
 
@@ -35,12 +32,12 @@ describe('CreateStorybook', () => {
 
     it('CreateStorybook', () => {
         cy.login(testData.URL, testData.Username, testData.Password);
-        home.clickOnStorybookmenuButton();
-        home.clickOnCreateStorybookButton();
-        home.enterSBTitleandClickOnSaveButton();
-        home.UploadAFile();
-        home.SelectUploadedFile();
-        home.ClickOnActivateButton();
-        home.ClickOnActivateButton2();
+        ipage.clickOnStorybookmenuButton();
+        ipage.clickOnCreateStorybookButton();
+        ipage.enterSBTitleandClickOnSaveButton();
+        ipage.UploadAFile();
+        ipage.SelectUploadedFile();
+        ipage.ClickOnActivateButton();
+        ipage.ClickOnActivateButton2();
     })
 })

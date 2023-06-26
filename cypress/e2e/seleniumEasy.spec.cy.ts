@@ -1,5 +1,4 @@
 /// <reference types="cypress"/>
-/// <reference types="@cypress/grep" />
 
 describe('SeleniumEasy', () => {
 
@@ -16,15 +15,15 @@ describe('SeleniumEasy', () => {
     })
     // @ts-ignore
 
-    it("test1", { tags: "@r1" }, () => {
+    it("test1", () => {
         console.log("im logged")
     })
 
-    it("test2", { tags: "@r2" }, () => {
+    it("test2", () => {
         console.log("im logged 2")
     })
 
-    it('Drag and Drop actions using data tranfer', { tags: '@h1' }, () => {
+    it('Drag and Drop actions using data tranfer', () => {
         cy.visit('https://demo.seleniumeasy.com/drag-and-drop-demo.html')
         const dataTransfer = new DataTransfer;
         cy.get('[draggable="true"]')
@@ -37,7 +36,7 @@ describe('SeleniumEasy', () => {
     })
 
     // @ts-ignore
-    it('Check box and Radio boxes operations - 1', { tags: "@h2" }, () => {
+    it('Check box and Radio boxes operations', () => {
         cy.visit('https://demo.seleniumeasy.com/basic-radiobutton-demo.html')
         cy.get('[value="Male"]').first().type('{enter}').check().should('be.checked')
         cy.get('#buttoncheck').contains('Get Checked value').click()
