@@ -33,7 +33,11 @@ function toPrintRAlla() {
    let splitName = name.split(" ")
    let secondname = splitName[1]
    let firstletter = name.charAt(0);
+<<<<<<< HEAD
    let finaloutput = firstletter.concat(secondname)
+=======
+   let finaloutput = concat(firstletter,secondname)
+>>>>>>> 093686e73df2c0431cb098f5d33699d79f952975
    console.log(finaloutput)
 }
 
