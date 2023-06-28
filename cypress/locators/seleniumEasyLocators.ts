@@ -5,7 +5,7 @@ const seleniumEasyLocators = {
     drop : "#mydropzone",
     droppedList: "#droppedlist",
     radioButtonMenu: '#treemenu [href*="radiobutton"]',
-    radioButton : '[value="Male"]',
+    radioButton : 'input:not([name="gender"])[value="Male"]',
     getCheckedValueButton : "#buttoncheck",
     checkedResultText: '.radiobutton'
 }

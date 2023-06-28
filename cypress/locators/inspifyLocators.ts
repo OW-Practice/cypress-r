@@ -1,7 +1,7 @@
 const inspifyLocators = {
     Username: "#username",
     Password: "#password",
-    SignIn: ".form-group>button",
+    SignIn: ".LoginForm .form-group .btn",
     Menubutton: '[class*="menu-nav btn"]',
     StoryBookMenuButton: ".btn-hub-storybook",
     CreateStoryBookButton: ".btn-create",
@@ -11,7 +11,9 @@ const inspifyLocators = {
     ActivateButton: '[class*="btn-publish"]',
     ActivateButton2:".popup-content-container .btn-publish",
     UploadButton: ".save-btn",
-    SelectScene : ".SBPageThumbnail .light-border"
+    SelectScene : ".SBPageThumbnail .light-border",
+    LogoutButton : ".btn-logout",
+    LoginForm: ".LoginForm"
 }
 export default inspifyLocators;
 

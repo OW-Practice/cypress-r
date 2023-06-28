@@ -7,7 +7,7 @@ export default class seleniumEasyPage {
     }
 
     clickOnDragAndDrop() {
-        cy.get(locators.dragAndDropmenu).click()
+        cy.get(locators.dragAndDropmenu).should('be.visible').click()
     }
 
     dragAndDropfirstElement() {
@@ -19,12 +19,13 @@ export default class seleniumEasyPage {
             .trigger('drop', { dataTransfer })
         cy.get(locators.droppedList).should('contain.text', 'Draggable 1')
     }
+
     clickOnInputFormsmenu() {
         cy.get(locators.menuArrow).contains('Input Forms').click()
     }
 
     clickOnRadioButtonsDemo() {
-        cy.get(locators.radioButtonMenu).click()
+        cy.get(locators.radioButtonMenu).should('be.visible').click()
     }
 
     checkFirstRadioButton(){
@@ -32,5 +33,7 @@ export default class seleniumEasyPage {
         cy.get(locators.getCheckedValueButton).contains('Get Checked value').click()
         cy.get(locators.checkedResultText).first().should('contain.text', 'Male')
     }
+
+    
 
 }
