@@ -19,7 +19,6 @@ describe('Login Functionality', () => {
     it('Launch URL', () => {
         cy.visit(Cypress.env('url'));
         lpage.loginToSite(testData.Username, testData.Password);
-        cy.wait(5000)
     })
 })
 
@@ -31,13 +30,14 @@ describe('CreateStorybook', () => {
     })
 
     it('CreateStorybook', () => {
+        // @ts-ignore
         cy.login(testData.URL, testData.Username, testData.Password);
-        ipage.clickOnStorybookmenuButton();
+        ipage.clickOnStorybookMenuButton();
         ipage.clickOnCreateStorybookButton();
-        ipage.enterSBTitleandClickOnSaveButton();
-        ipage.UploadAFile();
-        ipage.SelectUploadedFile();
-        ipage.ClickOnActivateButton();
-        ipage.ClickOnActivateButton2();
+        ipage.enterSBTitleAndClickOnSaveButton();
+        ipage.uploadAFile();
+        ipage.selectUploadedFile();
+        ipage.clickOnActivateButton();
+        ipage.clickOnActivateButton();
     })
 })

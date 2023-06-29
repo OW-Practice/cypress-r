@@ -6,68 +6,105 @@ import seleniumEasyPage from '../pages/seleniumEasyPage'
 const ipage = new inspifyPage()
 const spage = new seleniumEasyPage()
 
-let testData1
-let testData2
+let seleniumEasyData, inspifyData
 
-describe('Cypress Best Parctices For Selenium Easy Site', () => {
+describe('Cypress best practices', () => {
 
     context('SeleniumEasy', () => {
         before(() => {
             cy.fixture('seleniumEasy.json').then((data) => {
-                testData1 = data;
+                seleniumEasyData = data;
             });
         })
         beforeEach(() => {
-            cy.visit(testData1.SeleniumEasyURL)
+            cy.visit(seleniumEasyData.SeleniumEasyURL)
         })
 
         it('Drag and Drop actions using data transfer', () => {
             spage.clickOnOthersmenu()
             spage.clickOnDragAndDrop()
-            spage.dragAndDropfirstElement()
+            spage.dragAndDropFirstElement()
         })
+
         it('Radio box operations', () => {
             spage.clickOnInputFormsmenu()
             spage.clickOnRadioButtonsDemo()
             spage.checkFirstRadioButton()
         });
 
-        afterEach(()=>{
-            cy.clearAllCookies()
-            cy.clearAllLocalStorage()
-        })
-        after(()=>{
-            cy.log("Executed after hook")
-        })
-    })
+        it('Single select dropdown operations', () => {
+            spage.clickOnInputFormsmenu()
+            spage.clickOnSelectDropdownList()
+            spage.selectListDemo()
+        });
 
-    context('Inspify', () => {
-        before(() => {
-            cy.fixture('testData.json').then((data) => {
-                testData2 = data;
-            });
-        })
-        beforeEach(() => {
-            // cy.visit(testData2.URL)
-            // lpage.loginToSite(testData2.Username, testData2.Password)
-            cy.login(testData2.URL,testData2.Username, testData2.Password)
+        it('Multi select dropdown operations', () => {
+            spage.clickOnInputFormsmenu()
+            spage.clickOnSelectDropdownList()
+            spage.multiSelectListDemo()
+        });
+
+        it('Handle javascript alert with only one confimation button', () => {
+            spage.clickOnAlertsAndModals()
+            spage.clickOnJavascriptAlerts()
+            spage.handleJavascriptAlertWithOnlyOKButton()
         })
 
-        it('CreateStorybook', () => {
-            ipage.clickOnStorybookmenuButton();
-            ipage.clickOnCreateStorybookButton();
-            ipage.enterSBTitleandClickOnSaveButton();
-            ipage.UploadAFile();
-            ipage.SelectUploadedFile();
-            ipage.ClickOnActivateButton();
-            ipage.ClickOnActivateButton2();
+        it('Handle javascript alert - Click OK', () => {
+            spage.clickOnAlertsAndModals()
+            spage.clickOnJavascriptAlerts()
+            spage.handleJavascriptConfirmationBoxClickOK()
         })
 
-        afterEach(()=>{
+        it('Handle javascript alert - Click Cancel', () => {
+            spage.clickOnAlertsAndModals()
+            spage.clickOnJavascriptAlerts()
+            spage.handleJavascriptConfirmationBoxClickCancel()
+        })
+
+        it.only('Handle javascript alert with input box',()=>{
+            spage.clickOnAlertsAndModals()
+            spage.clickOnJavascriptAlerts()
+            spage.handleJavascriptAlertWithInputBox()
+        })
+
+        afterEach(() => {
             cy.clearAllCookies()
             cy.clearAllLocalStorage()
         })
         after(() => {
+            cy.log("Executed after hook")
+        })
+    })
+
+    context.skip('Inspify', () => {
+        before(() => {
+            cy.fixture('testData.json').then((data) => {
+                inspifyData = data;
+            });
+        })
+        beforeEach(() => {
+            // cy.visit(inspifyData.URL)
+            // lpage.loginToSite(inspifyData.Username, inspifyData.Password)
+            // @ts-ignore
+            cy.login(inspifyData.URL, inspifyData.Username, inspifyData.Password)
+        })
+
+        it('Create storybook', () => {
+            ipage.clickOnStorybookMenuButton();
+            ipage.clickOnCreateStorybookButton();
+            ipage.enterSBTitleAndClickOnSaveButton();
+            ipage.uploadAFile();
+            ipage.selectUploadedFile();
+            ipage.clickOnActivateButton();
+        })
+
+        afterEach(() => {
+            cy.clearAllCookies()
+            cy.clearAllLocalStorage()
+        })
+        after(() => {
+            // @ts-ignore
             cy.logout()
         })
     });

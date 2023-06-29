@@ -7,7 +7,18 @@ const seleniumEasyLocators = {
     radioButtonMenu: '#treemenu [href*="radiobutton"]',
     radioButton : 'input:not([name="gender"])[value="Male"]',
     getCheckedValueButton : "#buttoncheck",
-    checkedResultText: '.radiobutton'
+    checkedResultText: ".radiobutton",
+    selectDropdownList: '#treemenu [href*="select-dropdown"]',
+    panelHeading: ".panel-heading",
+    selectListDemo: ".form-control#select-demo",
+    selectedday: ".selected-value",
+    multiSelectListDemo: '#multi-select[name="States"]',
+    getAllSelectedButton: '[value="Print All"]',
+    selectedStates: '[class="getall-selected"]',
+    javascriptAlertsmenu: '.tree-branch [href*= "javascript-alert"]',
+    alertBoxButton: '[onclick="myAlertFunction()"]',
+    confirmationBoxButton: '[onclick="myConfirmFunction()"]',
+    confirmationBoxText: '#confirm-demo'
 }
 
 export default seleniumEasyLocators;
