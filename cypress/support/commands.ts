@@ -24,3 +24,11 @@ Cypress.Commands.add("logout", () => {
     cy.get(locators.LoginForm).should('be.visible')
         .find('h1').should('contain.text', 'WELCOME')
 })
+
+// @ts-ignore
+Cypress.Commands.add('handlePrompt', () => {
+    cy.window().then((win) => {
+        cy.stub(win, 'prompt').returns('Ramya'); // Simulate user input
+        cy.stub(win, 'onbeforeunload'); // Stub onbeforeunload to prevent page refresh
+    });
+});

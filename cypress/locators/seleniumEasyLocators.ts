@@ -1,12 +1,12 @@
 const seleniumEasyLocators = {
     menuArrow: "#treemenu .tree-branch [href]",
     dragAndDropmenu: '.tree-branch [href*= "drag-and-drop"]',
-    drag : '[draggable="true"]',
-    drop : "#mydropzone",
+    drag: '[draggable="true"]',
+    drop: "#mydropzone",
     droppedList: "#droppedlist",
     radioButtonMenu: '#treemenu [href*="radiobutton"]',
-    radioButton : 'input:not([name="gender"])[value="Male"]',
-    getCheckedValueButton : "#buttoncheck",
+    radioButton: 'input:not([name="gender"])[value="Male"]',
+    getCheckedValueButton: "#buttoncheck",
     checkedResultText: ".radiobutton",
     selectDropdownList: '#treemenu [href*="select-dropdown"]',
     panelHeading: ".panel-heading",
@@ -18,7 +18,11 @@ const seleniumEasyLocators = {
     javascriptAlertsmenu: '.tree-branch [href*= "javascript-alert"]',
     alertBoxButton: '[onclick="myAlertFunction()"]',
     confirmationBoxButton: '[onclick="myConfirmFunction()"]',
-    confirmationBoxText: '#confirm-demo'
+    confirmationBoxText: '#confirm-demo',
+    gmail: '[aria-label*="Gmail"]',
+    randomProfile: "#loading",
+    getNewUserButton: "#save",
+    dynamicDataLoadingMenu: '#treemenu [href*="dynamic-data-loading"]'
 }
 
 export default seleniumEasyLocators;

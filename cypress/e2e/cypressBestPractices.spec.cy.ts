@@ -9,7 +9,6 @@ const spage = new seleniumEasyPage()
 let seleniumEasyData, inspifyData
 
 describe('Cypress best practices', () => {
-
     context('SeleniumEasy', () => {
         before(() => {
             cy.fixture('seleniumEasy.json').then((data) => {
@@ -62,10 +61,24 @@ describe('Cypress best practices', () => {
             spage.handleJavascriptConfirmationBoxClickCancel()
         })
 
-        it.only('Handle javascript alert with input box',()=>{
+        it('Handle javascript alert with input box', () => {
             spage.clickOnAlertsAndModals()
             spage.clickOnJavascriptAlerts()
-            spage.handleJavascriptAlertWithInputBox()
+            //spage.handleJavascriptAlertWithInputBox()
+            // cy.get('[onclick="myPromptFunction()"]').click();
+            //@ts-ignore
+            cy.handlePrompt()
+        })
+
+        // This block will be executed only if we comment the before code
+        // it.skip('Handling tabs', () => {
+        //     spage.handleTabs()
+        // })
+
+        it('Cypress call back functions', () => {
+            spage.clickOnOthersmenu()
+            spage.clickOnDynamicDataLoadingMenu()
+            spage.callbackFunctions()
         })
 
         afterEach(() => {
@@ -77,7 +90,7 @@ describe('Cypress best practices', () => {
         })
     })
 
-    context.skip('Inspify', () => {
+    context('Inspify', () => {
         before(() => {
             cy.fixture('testData.json').then((data) => {
                 inspifyData = data;
