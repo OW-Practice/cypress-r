@@ -106,19 +106,49 @@ export default class seleniumEasyPage {
         });
     }
 
-    handleJavascriptAlertWithInputBox() {
-        cy.on('window:alert', (message) => {
-            // Extract the expected prompt message
-            const promptMessage = message.replace('Please enter your value:', '').trim();
-          
-            // Simulate entering a value into the prompt
-            const promptValue = 'Your value goes here';
-            cy.window().then((win) => {
-              cy.stub(win, 'prompt').returns(promptValue);
-            });
-          });
-          
-          // Trigger the action that triggers the alert with an input box
-          cy.get('[onclick="myPromptFunction()"]').click();
+    // handleJavascriptAlertWithInputBox() {
+    //     cy.on('window:prompt', (message, defaultValue) => {
+    //         // Handle the prompt box
+    //         cy.window().then((win) => {
+    //           cy.stub(win, 'prompt').returns('John Doe'); // Simulate user input
+    //           cy.on('window:confirm', () => {}); // Stub the subsequent confirm
+    //         });
+    //       });
+
+    //       // Trigger the action that triggers the alert with an input box
+    //       cy.get('[onclick="myPromptFunction()"]').click();
+    //       cy.handlePrompt()
+    // }
+
+    handleTabs() {
+        // url launch
+        cy.visit("https://www.google.com/")
+        // delete target attribute with invoke for link
+        cy.get(locators.gmail)
+            .invoke('removeAttr', 'target').click()
+        // verify tab url
+        cy.url()
+            .should('contain', 'gmail')
+        // shift to parent window
+        cy.go('back')
+        cy.url().should('not.contain', 'gmail')
+        cy.go('forward')
+    }
+
+    clickOnDynamicDataLoadingMenu() {
+        cy.get(locators.dynamicDataLoadingMenu).should('be.visible').should('contain.text', 'Dynamic Data Loading')
+            .should('contain.html', 'Data').click()
+    }
+
+    callbackFunctions() {
+        cy.get(locators.getNewUserButton).should('be.visible').should('contain.text', 'Get New User').then(($button) => {
+            cy.wrap($button).click()
+        })
+        cy.get(locators.randomProfile).find('br').should((verify) => {
+            expect(verify).to.have.length(4)
+        })
+        cy.get(locators.randomProfile).invoke('text').should((verify) => {
+            expect(verify).to.contain('First')
+        })
     }
 }

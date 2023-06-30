@@ -67,3 +67,15 @@ function toprintreversename() {
     console.log(reverseString)
 }
 toprintreversename()
+
+function printInitialCharsOfName(){
+    let name = "Ramya Reddy Alla"
+    let splitname = name.split(" ")
+    console.log(splitname)
+    let result = ""
+    for(let i=0;i<splitname.length;i++){
+      result += splitname[i].charAt(0)
+    }
+    console.log(result)
+}
+printInitialCharsOfName()
